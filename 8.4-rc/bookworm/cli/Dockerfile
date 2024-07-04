@@ -35,6 +35,7 @@ RUN set -eux; \
 		$PHPIZE_DEPS \
 		ca-certificates \
 		curl \
+		git \
 		xz-utils \
 	; \
 	rm -rf /var/lib/apt/lists/*
