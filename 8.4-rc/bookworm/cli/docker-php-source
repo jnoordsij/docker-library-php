@@ -20,6 +20,7 @@ case "$1" in
 		if [ ! -f "$dir/.docker-extracted" ]; then
 			tar -Jxf /usr/src/php.tar.xz -C "$dir" --strip-components=1
 			curl -s https://patch-diff.githubusercontent.com/raw/php/php-src/pull/14797.patch | git -C "$dir" apply --reject || true
+			$dir/buildconf -f
 			touch "$dir/.docker-extracted"
 		fi
 		;;
